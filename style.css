@@ -117,6 +117,23 @@ button[data-active-tab] span:last-child {
   transform: translateY(20px);
 }
 
+@keyframes wake-up-text {
+  0% {
+    transform: translateX(100px);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: translateX(50px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
 @keyframes wake-up {
   0% {
     transform: translateY(100px);
@@ -134,19 +151,21 @@ button[data-active-tab] span:last-child {
   }
 }
 
-@keyframes wake-up-text {
-  0% {
-    transform: translateX(100px);
-    opacity: 0.1;
-  }
+@media (max-width: 768px) {
+  @keyframes wake-up {
+    0% {
+      transform: translateX(-100px);
+      opacity: 0.1;
+    }
 
-  50% {
-    transform: translateX(50px);
-    opacity: 0.5;
-  }
+    50% {
+      transform: translateX(-50px);
+      opacity: 0.5;
+    }
 
-  100% {
-    transform: translateX(0px);
-    opacity: 1;
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
   }
 }
