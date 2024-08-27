@@ -56,6 +56,7 @@ html {
 .tabs-content {
   background-color: #d4e9e3;
   padding-block: 50px;
+  padding-inline: 16px;
   overflow: hidden;
 }
 
