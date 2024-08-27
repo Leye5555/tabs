@@ -86,7 +86,6 @@ div[data-active-tab] {
 
   gap: 30px;
   flex-wrap: wrap;
-  padding-inline: 16px;
 }
 
 .content-text {
