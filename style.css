@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.tab-container > div {
+  flex: 1;
+}
+
+.tabs-caption {
+  display: flex;
+  flex-direction: column;
+  background-color: #f0f8f6;
+  padding-inline: 1rem;
+
+  gap: 40px;
+  padding-top: 50px;
+}
+
+.tabs-caption > * {
+  flex: 1;
+}
+
+.tabs-caption > h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+}
+
+.tab-triggers {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  width: 100%;
+  max-width: min(500px, 90vw);
+  margin: auto;
+}
+
+.tab-triggers > div {
+  display: flex;
+  align-items: flex-end;
+}
+
+.tabs-content {
+  background-color: #d4e9e3;
+  padding-block: 50px;
+  overflow: hidden;
+}
+
+.tabs-content > div {
+  display: none;
+  margin: auto;
+  max-width: max-content;
+}
+
+.tab-triggers button {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  top: -20px;
+}
+
+.tab-triggers button span:first-child {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+div[data-active-tab] {
+  display: flex !important;
+
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-inline: 16px;
+}
+
+.content-text {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+}
+
+[data-active-tab] .content-text h3,
+[data-active-tab] .content-text p {
+  animation: wake-up-text 1s forwards linear;
+}
+
+[data-active-tab] img {
+  animation: wake-up 1s forwards linear;
+}
+
+button[data-active-tab] span:last-child {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 4px;
+  background-image: linear-gradient(90deg, green, orange);
+  transform: translateY(20px);
+}
+
+@keyframes wake-up {
+  0% {
+    transform: translateY(100px);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: translateY(50px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes wake-up-text {
+  0% {
+    transform: translateX(100px);
+    opacity: 0.1;
+  }
+
+  50% {
+    transform: translateX(50px);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
